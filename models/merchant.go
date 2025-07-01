@@ -15,7 +15,7 @@ type Merchant struct {
 	AppSecret       string `json:"app_secret" gorm:"app_secret"`             // app密钥
 	Phone           string `json:"phone" gorm:"phone"`                       // 联系方式
 	BusinessLicense string `json:"business_license" gorm:"business_license"` // 营业职照
-	Status          int8   `json:"status" gorm:"status"`                     // 状态 1启用 2禁用 3 审核中 4 审核失败
+	Status          int    `json:"status" gorm:"status"`                     // 状态 1启用 2禁用 3 审核中 4 审核失败
 	CreatedAt       int64  `json:"created_at" gorm:"created_at"`
 	UpdatedAt       int64  `json:"updated_at" gorm:"updated_at"`
 	DeletedAt       int64  `json:"deleted_at" gorm:"deleted_at"`
