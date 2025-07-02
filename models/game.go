@@ -1,5 +1,7 @@
 package models
 
+import "glib/stores/gormx"
+
 const TableNameGame = "game"
 
 // Game 游戏表
@@ -22,9 +24,7 @@ type Game struct {
 	DelayWithdrawSecond int     `json:"delay_withdraw_second" gorm:"delay_withdraw_second"` // 延迟提款秒数
 	RebateRate          float64 `json:"rebate_rate" gorm:"rebate_rate"`                     // 返奖率
 	Remark              string  `json:"remark" gorm:"remark"`                               // 备注
-	CreatedAt           int64   `json:"created_at" gorm:"created_at"`
-	UpdatedAt           int64   `json:"updated_at" gorm:"updated_at"`
-	DeletedAt           int64   `json:"deleted_at" gorm:"deleted_at"`
+	gormx.Model
 }
 
 // TableName 表名称

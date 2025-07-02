@@ -1,5 +1,7 @@
 package models
 
+import "github.com/og-game/glib/stores/gormx"
+
 const TableNameUserTransferRecord = "user_transfer_record"
 
 // UserTransferRecord 玩家转账记录表
@@ -13,9 +15,7 @@ type UserTransferRecord struct {
 	BalanceAfterTransfer float64 `json:"balance_after_transfer" gorm:"balance_after_transfer"` // 转账后余额
 	TransferType         int     `json:"transfer_type" gorm:"transfer_type"`                   // 转账类型 1 转入 2转出
 	SuccessAt            int64   `json:"success_at" gorm:"success_at"`                         // 转账成功时间
-	CreatedAt            int64   `json:"created_at" gorm:"created_at"`
-	UpdatedAt            int64   `json:"updated_at" gorm:"updated_at"`
-	DeletedAt            int64   `json:"deleted_at" gorm:"deleted_at"`
+	gormx.Model
 }
 
 // TableName 表名称

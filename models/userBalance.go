@@ -1,5 +1,10 @@
 package models
 
+import (
+	"github.com/og-game/glib/stores/gormx"
+	"gorm.io/plugin/optimisticlock"
+)
+
 const TableNameUserBalance = "user_balance"
 
 // UserBalance 用户游戏余额表
@@ -12,10 +17,8 @@ type UserBalance struct {
 	Balance             float64 `json:"balance" gorm:"balance"`                           // 游戏内余额(微)
 	FrozenBalance       float64 `json:"frozen_balance" gorm:"frozen_balance"`             // 游戏内冻结余额
 	TransferringBalance float64 `json:"transferring_balance" gorm:"transferring_balance"` // 转账中余额
-	Version             int64   `json:"version" gorm:"version"`                           // 乐观锁版本号
-	CreatedAt           int64   `json:"created_at" gorm:"created_at"`                     // 创建时间戳
-	UpdatedAt           int64   `json:"updated_at" gorm:"updated_at"`                     // 更新时间戳
-	DeletedAt           int64   `json:"deleted_at" gorm:"deleted_at"`                     // 删除时间戳（软删除）
+	Version             optimisticlock.Version
+	gormx.Model         // 删除时间戳（软删除）
 }
 
 // TableName 表名称

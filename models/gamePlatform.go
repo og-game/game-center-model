@@ -1,5 +1,7 @@
 package models
 
+import "github.com/og-game/glib/stores/gormx"
+
 const TableNameGamePlatform = "game_platform"
 
 // GamePlatform 游戏平台表
@@ -11,9 +13,7 @@ type GamePlatform struct {
 	WalletType    int    `json:"wallet_type" gorm:"wallet_type"`       // 钱包类型 1 单一  2转账
 	Weigh         int    `json:"weigh" gorm:"weigh"`                   // 排序值
 	Status        int    `json:"status" gorm:"status"`                 // 状态 1 启用 2禁用
-	CreatedAt     int64  `json:"created_at" gorm:"created_at"`
-	UpdatedAt     int64  `json:"updated_at" gorm:"updated_at"`
-	DeletedAt     int64  `json:"deleted_at" gorm:"deleted_at"`
+	gormx.Model
 }
 
 // TableName 表名称

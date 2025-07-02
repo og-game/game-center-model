@@ -1,5 +1,7 @@
 package models
 
+import "github.com/og-game/glib/stores/gormx"
+
 const TableNameUser = "user"
 
 // User 用户表
@@ -17,9 +19,7 @@ type User struct {
 	Region           string `json:"region" gorm:"region"`                       // 地区
 	LastLoginIp      string `json:"last_login_ip" gorm:"last_login_ip"`         // 最后登录IP
 	LastDeviceId     string `json:"last_device_id" gorm:"last_device_id"`       // 最后使用设备ID
-	CreatedAt        int64  `json:"created_at" gorm:"created_at"`               // 创建时间戳
-	UpdatedAt        int64  `json:"updated_at" gorm:"updated_at"`               // 更新时间戳
-	DeletedAt        int64  `json:"deleted_at" gorm:"deleted_at"`               // 删除时间戳（软删除）
+	gormx.Model             // 删除时间戳（软删除）
 }
 
 // TableName 表名称
