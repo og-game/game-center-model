@@ -1,6 +1,6 @@
 package models
 
-import "glib/stores/gormx"
+import "github.com/og-game/glib/stores/gormx"
 
 const TableNameGame = "game"
 
