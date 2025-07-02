@@ -10,7 +10,7 @@ const TableNameUserBalance = "user_balance"
 // UserBalance 用户游戏余额表
 type UserBalance struct {
 	BalanceId           int64   `json:"balance_id" gorm:"balance_id"`                     // 余额记录主键ID
-	UserId              string  `json:"user_id" gorm:"user_id"`                           // 用户ID
+	UserId              int64   `json:"user_id" gorm:"user_id"`                           // 用户ID
 	MerchantId          int64   `json:"merchant_id" gorm:"merchant_id"`                   // 商户ID
 	GameId              int64   `json:"game_id" gorm:"game_id"`                           // 游戏ID
 	PlatformId          int64   `json:"platform_id" gorm:"platform_id"`                   // 平台ID
