@@ -11,7 +11,7 @@ type UserTransferRecord struct {
 	GameId               int64   `json:"game_id" gorm:"game_id"`                               // 游戏id
 	Amount               float64 `json:"amount" gorm:"amount"`                                 // 操作金额
 	BalanceAfterTransfer float64 `json:"balance_after_transfer" gorm:"balance_after_transfer"` // 转账后余额
-	TransferType         int8    `json:"transfer_type" gorm:"transfer_type"`                   // 转账类型 1 转入 2转出
+	TransferType         int     `json:"transfer_type" gorm:"transfer_type"`                   // 转账类型 1 转入 2转出
 	SuccessAt            int64   `json:"success_at" gorm:"success_at"`                         // 转账成功时间
 	CreatedAt            int64   `json:"created_at" gorm:"created_at"`
 	UpdatedAt            int64   `json:"updated_at" gorm:"updated_at"`
