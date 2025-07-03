@@ -19,6 +19,8 @@ type User struct {
 	Region           string `json:"region" gorm:"region"`                       // 地区
 	LastLoginIp      string `json:"last_login_ip" gorm:"last_login_ip"`         // 最后登录IP
 	LastDeviceId     string `json:"last_device_id" gorm:"last_device_id"`       // 最后使用设备ID
+	LastLoginTime    int64  `json:"last_login_time" gorm:"last_login_time"`     // 最后登录时间
+	LastDeviceOS     string `json:"last_device_os" gorm:"last_device_os"`       // 最后使用设备OS
 	gormx.Model             // 删除时间戳（软删除）
 }
 

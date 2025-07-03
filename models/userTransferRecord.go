@@ -6,8 +6,10 @@ const TableNameUserTransferRecord = "user_transfer_record"
 
 // UserTransferRecord 玩家转账记录表
 type UserTransferRecord struct {
-	RecordId             int64   `json:"record_id" gorm:"record_id;primaryKey"`
-	MerchantOrderNo      string  `json:"merchant_order_no" gorm:"merchant_order_no"`
+	RecordId             int64   `json:"record_id" gorm:"record_id;primaryKey"`                // 记录id
+	MerchantOrderNo      string  `json:"merchant_order_no" gorm:"merchant_order_no"`           // 商户订单号
+	OrderNo              string  `json:"order_no" gorm:"order_no"`                             // 中台订单号
+	PlatformOrderNo      string  `json:"platform_order_no" gorm:"platform_order_no"`           // 厂商订单号
 	MerchantId           int64   `json:"merchant_id" gorm:"merchant_id"`                       // 商户id
 	UserId               int64   `json:"user_id" gorm:"user_id"`                               // 玩家id
 	PlatformId           int64   `json:"platform_id" gorm:"platform_id"`                       // 游戏平台id
