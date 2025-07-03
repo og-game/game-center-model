@@ -6,7 +6,7 @@ const TableNameUser = "user"
 
 // User 用户表
 type User struct {
-	UserId           int64  `json:"user_id" gorm:"user_id"`                     // 中台用户主键ID
+	UserId           int64  `json:"user_id" gorm:"user_id;primaryKey"`          // 中台用户主键ID
 	MerchantId       int64  `json:"merchant_id" gorm:"merchant_id"`             // 商户ID
 	MerchantUserId   string `json:"merchant_user_id" gorm:"merchant_user_id"`   // 下游系统用户ID（唯一）
 	MerchantNickname string `json:"merchant_nickname" gorm:"merchant_nickname"` // 下游系统用户名

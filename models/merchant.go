@@ -6,7 +6,7 @@ const TableNameMerchant = "merchant"
 
 // Merchant 商户表
 type Merchant struct {
-	MerchantId      int64  `json:"merchant_id" gorm:"merchant_id"`
+	MerchantId      int64  `json:"merchant_id" gorm:"merchant_id;primaryKey"`
 	ParentId        int64  `json:"parent_id" gorm:"parent_id"`               // 上级id
 	CountryCode     string `json:"country_code" gorm:"country_code"`         // 国家code
 	CurrencyCode    string `json:"currency_code" gorm:"currency_code"`       // 币种code

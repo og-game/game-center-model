@@ -6,7 +6,7 @@ const TableNameGame = "game"
 
 // Game 游戏表
 type Game struct {
-	GameId              int64   `json:"game_id" gorm:"game_id"`                             // 游戏id
+	GameId              int64   `json:"game_id" gorm:"game_id;primaryKey"`                  // 游戏id
 	ThreeId             string  `json:"three_id" gorm:"three_id"`                           // 三方游戏id
 	PlatformId          int64   `json:"platform_id" gorm:"platform_id"`                     // 平台id
 	PlatformRate        float64 `json:"platform_rate" gorm:"platform_rate"`                 // 厂商费率
