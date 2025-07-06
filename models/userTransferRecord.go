@@ -6,7 +6,7 @@ const TableNameUserTransferRecord = "user_transfer_record"
 
 // UserTransferRecord 用户转账记录表
 type UserTransferRecord struct {
-	RecordId              int64   `json:"record_id" gorm:"record_id"`                             // 主键ID
+	RecordId              int64   `json:"record_id" gorm:"record_id;primaryKey"`                  // 主键ID
 	TransactionId         string  `json:"transaction_id" gorm:"transaction_id"`                   // 中台交易ID（业务唯一标识）
 	UserId                int64   `json:"user_id" gorm:"user_id"`                                 // 用户ID
 	MerchantId            int     `json:"merchant_id" gorm:"merchant_id"`                         // 商户ID
