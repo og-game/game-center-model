@@ -10,7 +10,7 @@ type Game struct {
 	ThreeId             string  `json:"three_id" gorm:"three_id"`                           // 三方游戏id
 	PlatformId          int64   `json:"platform_id" gorm:"platform_id"`                     // 平台id
 	PlatformRate        float64 `json:"platform_rate" gorm:"platform_rate"`                 // 厂商费率
-	CategoryId          int64   `json:"category_id" gorm:"category_id"`                     // 分类id
+	CategoryCode        int64   `json:"category_code" gorm:"category_code"`                 // 分类code
 	GameName            string  `json:"game_name" gorm:"game_name"`                         // 游戏名称
 	Icon                string  `json:"icon" gorm:"icon"`                                   // 图标
 	ThumbCover          string  `json:"thumb_cover" gorm:"thumb_cover"`                     // 缩略图
