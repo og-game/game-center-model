@@ -6,7 +6,7 @@ const TableNameUserBalanceRecode = "user_balance_record"
 
 // UserBalanceRecord 用户余额变动记录表（账变记录表）
 type UserBalanceRecord struct {
-	RecordId        int64   `json:"record_id" gorm:"record_id"`                 // 主键ID
+	RecordId        int64   `json:"record_id" gorm:"record_id,primaryKey"`      // 主键ID
 	MerchantId      int     `json:"merchant_id" gorm:"merchant_id"`             // 商户ID
 	UserId          int64   `json:"user_id" gorm:"user_id"`                     // 用户ID
 	PlatformId      int     `json:"platform_id" gorm:"platform_id"`             // 平台ID

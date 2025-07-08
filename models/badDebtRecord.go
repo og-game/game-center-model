@@ -4,7 +4,7 @@ const TableNameBadDebtRecord = "bad_debt_record"
 
 // BadDebtRecord 坏账记录表
 type BadDebtRecord struct {
-	BadDebtId        int64   `json:"bad_debt_id" gorm:"bad_debt_id"`               // 主键ID
+	BadDebtId        int64   `json:"bad_debt_id" gorm:"bad_debt_id,primaryKey"`    // 主键ID
 	MerchantId       int     `json:"merchant_id" gorm:"merchant_id"`               // 商户ID
 	UserId           int64   `json:"user_id" gorm:"user_id"`                       // 用户ID
 	PlatformId       int     `json:"platform_id" gorm:"platform_id"`               // 平台ID
