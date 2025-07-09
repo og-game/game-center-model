@@ -12,9 +12,9 @@ type UserTransferRecord struct {
 	RecordId              int64           `json:"record_id" gorm:"record_id;primaryKey"`                  // 主键ID
 	TransactionId         string          `json:"transaction_id" gorm:"transaction_id"`                   // 中台交易ID（业务唯一标识）
 	UserId                int64           `json:"user_id" gorm:"user_id"`                                 // 用户ID
-	MerchantId            int             `json:"merchant_id" gorm:"merchant_id"`                         // 商户ID
-	PlatformId            int             `json:"platform_id" gorm:"platform_id"`                         // 平台ID
-	GameId                int             `json:"game_id" gorm:"game_id"`                                 // 游戏ID（可选）
+	MerchantId            int64           `json:"merchant_id" gorm:"merchant_id"`                         // 商户ID
+	PlatformId            int64           `json:"platform_id" gorm:"platform_id"`                         // 平台ID
+	GameId                int64           `json:"game_id" gorm:"game_id"`                                 // 游戏ID（可选）
 	TransferType          int             `json:"transfer_type" gorm:"transfer_type"`                     // 转账类型：1=转入，2=转出
 	Amount                decimal.Decimal `json:"amount" gorm:"amount"`                                   // 转账金额
 	CurrencyCode          string          `json:"currency_code" gorm:"currency_code"`                     // 币种代码
