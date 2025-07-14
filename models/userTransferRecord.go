@@ -30,7 +30,7 @@ type UserTransferRecord struct {
 	ErrorCode       string          `json:"error_code" gorm:"error_code"`               // 错误代码
 	ErrorMessage    string          `json:"error_message" gorm:"error_message"`         // 错误信息
 	FailureReason   string          `json:"failure_reason" gorm:"failure_reason"`       // 失败原因
-	MerchantOrderID string          `json:"merchant_order_id" gorm:"merchant_order_id"` // 下游业务订单号
+	MerchantOrderId string          `json:"merchant_order_id" gorm:"merchant_order_id"` // 下游业务订单号
 	Remark          string          `json:"remark" gorm:"remark"`                       // 备注信息
 	gormx.Model
 }

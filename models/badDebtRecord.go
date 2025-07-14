@@ -14,7 +14,7 @@ type BadDebtRecord struct {
 	UserBalance      decimal.Decimal `json:"user_balance" gorm:"user_balance"`             // 用户当前余额
 	DeficitAmount    decimal.Decimal `json:"deficit_amount" gorm:"deficit_amount"`         // 缺口金额（负余额的绝对值）
 	CurrencyCode     string          `json:"currency_code" gorm:"currency_code"`           // 币种代码
-	OriginalOrderNo  string          `json:"original_order_no" gorm:"original_order_no"`   // 原始业务订单号
+	OriginalOrderId  string          `json:"original_order_id" gorm:"original_order_id"`   // 原始业务订单号
 	PlatformOrderId  string          `json:"platform_order_id" gorm:"platform_order_id"`   // 三方平台订单ID
 	MerchantOrderId  string          `json:"merchant_order_id" gorm:"merchant_order_id"`   // 下游商户订单ID
 	TransactionId    string          `json:"transaction_id" gorm:"transaction_id"`         // 中台交易流水号
