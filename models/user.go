@@ -17,10 +17,11 @@ type User struct {
 	RiskLevel        int    `json:"risk_level" gorm:"risk_level"`               // 风险等级 1:正常 2:低风险 3:中风险 4:高风险
 	CountryCode      string `json:"country_code" gorm:"country_code"`           // 国家代码
 	Region           string `json:"region" gorm:"region"`                       // 地区
-	LastLoginIp      string `json:"last_login_ip" gorm:"last_login_ip"`         // 最后登录IP
+	LastUsedIp       string `json:"last_used_ip" gorm:"last_used_ip"`           // 最后一次使用的IP
 	LastDeviceId     string `json:"last_device_id" gorm:"last_device_id"`       // 最后使用设备ID
-	LastLoginTime    int64  `json:"last_login_time" gorm:"last_login_time"`     // 最后登录时间
 	LastDeviceOS     string `json:"last_device_os" gorm:"last_device_os"`       // 最后使用设备OS
+	LastPlayTime     int64  `json:"last_play_time" gorm:"last_play_time"`       // 最后游玩时间
+	LastPlayGameID   int64  `json:"last_play_game_id" gorm:"last_play_game_id"` // 最后一次游玩的游戏
 	gormx.Model             // 删除时间戳（软删除）
 }
 
