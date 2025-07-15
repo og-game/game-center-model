@@ -22,6 +22,9 @@ type GameBetDetail struct {
 	SettleAmount    decimal.Decimal `json:"settle_amount" gorm:"settle_amount"`         // '结算金额（仅 record_type 为 2 或 4 使用）'
 	SourceTime      int64           `json:"source_time" gorm:"source_time"`             // '投注或结算来源时间戳（毫秒）'
 	Status          int64           `json:"status" gorm:"status"`                       // '状态：1-有效，2-取消，3-冲正等业务状态'
+	ClientIP        string          `json:"client_ip" gorm:"client_ip"`                 // '客户端IP'
+	DeviceID        string          `json:"device_id" gorm:"device_id"`                 // '设备ID'
+	DeviceOS        string          `json:"device_os" gorm:"device_os"`                 // '设备操作系统'
 	gormx.Model
 }
 
