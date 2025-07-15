@@ -6,7 +6,7 @@ const TableNameUserGameLog = "user_game_log"
 
 // UserGameLog undefined
 type UserGameLog struct {
-	GameLogId  int64  `json:"game_log_id" gorm:"game_log_id"`
+	GameLogId  int64  `json:"game_log_id" gorm:"game_log_id,primaryKey"`
 	UserId     int64  `json:"user_id" gorm:"user_id"`         // 用户id
 	MerchantId int64  `json:"merchant_id" gorm:"merchant_id"` // 商户id
 	PlatformId int64  `json:"platform_id" gorm:"platform_id"` // 游戏平台id
