@@ -1,5 +1,7 @@
 package models
 
+import "github.com/og-game/glib/stores/gormx"
+
 const TableNameUserGameLog = "user_game_log"
 
 // UserGameLog undefined
@@ -12,9 +14,7 @@ type UserGameLog struct {
 	DeviceId   string `json:"device_id" gorm:"device_id"`     // 设备id
 	DeviceOs   string `json:"device_os" gorm:"device_os"`     // 设备os
 	DeviceIp   string `json:"device_ip" gorm:"device_ip"`     // 设备ip
-	CreatedAt  int64  `json:"created_at" gorm:"created_at"`
-	UpdatedAt  int64  `json:"updated_at" gorm:"updated_at"`
-	DeletedAt  int64  `json:"deleted_at" gorm:"deleted_at"`
+	gormx.Model
 }
 
 // TableName 表名称
