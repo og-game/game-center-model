@@ -13,6 +13,7 @@ type GameBetDetail struct {
 	RecordType      int             `json:"record_type" gorm:"record_type"`             // '记录类型：1-投注，2-结算，3-投注取消，4-结算取消'
 	UserID          int64           `json:"user_id" gorm:"user_id"`                     // '用户ID'
 	MerchantID      int64           `json:"merchant_id" gorm:"merchant_id"`             // '商户ID'
+	PlatformID      int64           `json:"platform_id" gorm:"platform_id"`             // 厂商id
 	GameID          int64           `json:"game_id" gorm:"game_id"`                     // '游戏ID'
 	RoundID         string          `json:"round_id" gorm:"round_id"`                   // '牌局ID'
 	OrderId         string          `json:"order_id" gorm:"order_id"`                   // '注单唯一ID'
