@@ -13,6 +13,7 @@ type GameBetSummary struct {
 	RoundID            string          `json:"round_id" grom:"round_id"`                         // 牌局ID
 	UserID             int64           `json:"user_id" grom:"user_id"`                           // 用户ID
 	MerchantID         int64           `json:"merchant_id" grom:"merchant_id"`                   // 商户ID
+	MerchantUserID     string          `json:"merchant_user_id" gorm:"merchant_user_id"`         // 商户用户id
 	GameID             int64           `json:"game_id" grom:"game_id"`                           // 游戏ID
 	CurrencyCode       string          `json:"currency_code" grom:"currency_code"`               // 币种code
 	BetCount           int64           `json:"bet_count" grom:"bet_count"`                       // 有效投注笔数（不含取消）
