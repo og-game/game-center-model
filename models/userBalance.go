@@ -12,6 +12,7 @@ type UserBalance struct {
 	BalanceId           int64           `json:"balance_id" gorm:"balance_id;primaryKey"`          // 余额记录主键ID
 	UserId              int64           `json:"user_id" gorm:"user_id"`                           // 用户ID
 	MerchantId          int64           `json:"merchant_id" gorm:"merchant_id"`                   // 商户ID
+	MerchantUserID      string          `json:"merchant_user_id" gorm:"merchant_user_id"`         // 商户用户id
 	PlatformId          int64           `json:"platform_id" gorm:"platform_id"`                   // 平台ID
 	Balance             decimal.Decimal `json:"balance" gorm:"balance"`                           // 游戏内余额(微)
 	FrozenBalance       decimal.Decimal `json:"frozen_balance" gorm:"frozen_balance"`             // 游戏内冻结余额

@@ -8,6 +8,7 @@ const TableNameBadDebtRecord = "bad_debt_record"
 type BadDebtRecord struct {
 	BadDebtId        int64           `json:"bad_debt_id" gorm:"bad_debt_id,primaryKey"`    // 主键ID
 	MerchantId       int64           `json:"merchant_id" gorm:"merchant_id"`               // 商户ID
+	MerchantUserID   string          `json:"merchant_user_id" gorm:"merchant_user_id"`     // 商户用户id
 	UserId           int64           `json:"user_id" gorm:"user_id"`                       // 用户ID
 	PlatformId       int64           `json:"platform_id" gorm:"platform_id"`               // 平台ID
 	DebtAmount       decimal.Decimal `json:"debt_amount" gorm:"debt_amount"`               // 坏账金额（应扣除但无法扣除的金额）

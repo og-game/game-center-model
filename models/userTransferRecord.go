@@ -12,6 +12,7 @@ type UserTransferRecord struct {
 	RecordId        int64           `json:"record_id" gorm:"record_id;primaryKey"`      // 主键ID
 	TransactionId   string          `json:"transaction_id" gorm:"transaction_id"`       // 中台交易ID（业务唯一标识）
 	UserId          int64           `json:"user_id" gorm:"user_id"`                     // 用户ID
+	MerchantUserID  string          `json:"merchant_user_id" gorm:"merchant_user_id"`   // 商户用户id
 	MerchantId      int64           `json:"merchant_id" gorm:"merchant_id"`             // 商户ID
 	PlatformId      int64           `json:"platform_id" gorm:"platform_id"`             // 平台ID
 	GameId          int64           `json:"game_id" gorm:"game_id"`                     // 游戏ID（可选）
