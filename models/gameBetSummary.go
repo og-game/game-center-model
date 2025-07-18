@@ -24,6 +24,8 @@ type GameBetSummary struct {
 	SettleAmount       decimal.Decimal `json:"settle_amount" grom:"settle_amount"`               // 有效结算金额
 	CancelSettleCount  int64           `json:"cancel_settle_count" grom:"cancel_settle_count"`   // 取消结算笔数
 	CancelSettleAmount decimal.Decimal `json:"cancel_settle_amount" grom:"cancel_settle_amount"` // 取消结算金额
+	BetAt              int64           `json:"bet_at" grom:"bet_at"`                             // 下注时间
+	SettledAt          int64           `json:"settled_at" grom:"settled_at"`                     // 结算时间
 	gormx.Model
 }
 
