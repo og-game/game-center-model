@@ -26,7 +26,8 @@ type UserBalanceRecord struct {
 	Description     string          `json:"description" gorm:"description"`             // 交易描述
 	Remark          string          `json:"remark" gorm:"remark"`                       // 备注信息
 	ClientIp        string          `json:"client_ip" gorm:"client_ip"`                 // 客户端IP
-	UserAgent       string          `json:"user_agent" gorm:"user_agent"`               // 用户代理
+	DeviceID        string          `json:"device_id" gorm:"device_id"`                 // '设备ID'
+	DeviceOS        string          `json:"device_os" gorm:"device_os"`                 // '设备操作系统'
 	ExtData         string          `json:"ext_data" gorm:"ext_data"`                   // 扩展数据（JSON格式）
 	gormx.Model
 }
