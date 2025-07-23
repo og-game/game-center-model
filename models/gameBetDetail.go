@@ -16,6 +16,7 @@ type GameBetDetail struct {
 	MerchantUserID   string          `json:"merchant_user_id" gorm:"merchant_user_id"`   // 商户用户id
 	PlatformID       int64           `json:"platform_id" gorm:"platform_id"`             // 厂商id
 	GameID           int64           `json:"game_id" gorm:"game_id"`                     // '游戏ID'
+	CategoryCode     string          `json:"category_code" gorm:"category_code"`         // 分类code
 	RoundID          string          `json:"round_id" gorm:"round_id"`                   // '牌局ID'
 	OrderId          string          `json:"order_id" gorm:"order_id"`                   // '注单唯一ID'
 	PlatformOrderId  string          `json:"platform_order_id" gorm:"platform_order_id"` // '游戏平台原始单号'
