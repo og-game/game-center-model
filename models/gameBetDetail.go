@@ -18,8 +18,8 @@ type GameBetDetail struct {
 	GameID           int64           `json:"game_id" gorm:"game_id"`                     // '游戏ID'
 	CategoryCode     string          `json:"category_code" gorm:"category_code"`         // 分类code
 	RoundID          string          `json:"round_id" gorm:"round_id"`                   // '牌局ID'
-	OrderId          string          `json:"order_id" gorm:"order_id"`                   // '注单唯一ID'
-	PlatformOrderId  string          `json:"platform_order_id" gorm:"platform_order_id"` // '游戏平台原始单号'
+	OrderID          string          `json:"order_id" gorm:"order_id"`                   // '注单唯一ID'
+	PlatformOrderID  string          `json:"platform_order_id" gorm:"platform_order_id"` // '游戏平台原始单号'
 	CurrencyCode     string          `json:"currency_code" gorm:"currency_code"`         // '币种code'
 	BetAmount        decimal.Decimal `json:"bet_amount" gorm:"bet_amount"`               // '投注金额'
 	SettleAmount     decimal.Decimal `json:"settle_amount" gorm:"settle_amount"`         // '结算金额'
