@@ -12,6 +12,7 @@ type UserGameLog struct {
 	MerchantId     int64  `json:"merchant_id" gorm:"merchant_id"`           // 商户id
 	PlatformId     int64  `json:"platform_id" gorm:"platform_id"`           // 游戏平台id
 	GameId         int64  `json:"game_id" gorm:"game_id"`                   // 游戏id
+	CategoryCode   string `json:"category_code" gorm:"category_code"`       // 分类code
 	DeviceId       string `json:"device_id" gorm:"device_id"`               // 设备id
 	DeviceOs       string `json:"device_os" gorm:"device_os"`               // 设备os
 	DeviceIp       string `json:"device_ip" gorm:"device_ip"`               // 设备ip
