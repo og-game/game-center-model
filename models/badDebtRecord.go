@@ -14,6 +14,8 @@ type BadDebtRecord struct {
 	MerchantUserID   string          `json:"merchant_user_id" gorm:"merchant_user_id"`     // 商户用户id
 	UserId           int64           `json:"user_id" gorm:"user_id"`                       // 用户ID
 	PlatformId       int64           `json:"platform_id" gorm:"platform_id"`               // 平台ID
+	GameId          int64           `json:"game_id" gorm:"game_id"`                     // 游戏ID（可选）
+	CategoryCode     string          `json:"category_code" gorm:"category_code"`         // 分类code
 	DebtAmount       decimal.Decimal `json:"debt_amount" gorm:"debt_amount"`               // 坏账金额（应扣除但无法扣除的金额）
 	UserBalance      decimal.Decimal `json:"user_balance" gorm:"user_balance"`             // 用户当前余额
 	DeficitAmount    decimal.Decimal `json:"deficit_amount" gorm:"deficit_amount"`         // 缺口金额（负余额的绝对值）

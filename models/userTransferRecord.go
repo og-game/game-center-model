@@ -16,6 +16,7 @@ type UserTransferRecord struct {
 	MerchantId      int64           `json:"merchant_id" gorm:"merchant_id"`             // 商户ID
 	PlatformId      int64           `json:"platform_id" gorm:"platform_id"`             // 平台ID
 	GameId          int64           `json:"game_id" gorm:"game_id"`                     // 游戏ID（可选）
+	CategoryCode     string          `json:"category_code" gorm:"category_code"`         // 分类code
 	TransferType    int             `json:"transfer_type" gorm:"transfer_type"`         // 转账类型：1=转入，2=转出
 	Amount          decimal.Decimal `json:"amount" gorm:"amount"`                       // 转账金额
 	CurrencyCode    string          `json:"currency_code" gorm:"currency_code"`         // 币种代码

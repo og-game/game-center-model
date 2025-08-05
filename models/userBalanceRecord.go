@@ -14,6 +14,8 @@ type UserBalanceRecord struct {
 	MerchantUserID  string          `json:"merchant_user_id" gorm:"merchant_user_id"`   // 商户用户id
 	UserId          int64           `json:"user_id" gorm:"user_id"`                     // 用户ID
 	PlatformId      int64           `json:"platform_id" gorm:"platform_id"`             // 平台ID
+	GameId          int64           `json:"game_id" gorm:"game_id"`                     // 游戏ID（可选）
+	CategoryCode     string          `json:"category_code" gorm:"category_code"`         // 分类code
 	TransactionType int             `json:"transaction_type" gorm:"transaction_type"`   // 交易类型：1=转入游戏,2=从游戏转出,3=投注,4=结算派奖,5=押金,6=返还押金,7=取消投注,8=结算撤单,9=重新派奖,10=调整金额
 	Amount          decimal.Decimal `json:"amount" gorm:"amount"`                       // 变动金额（正数表示增加，负数表示减少）
 	BalanceBefore   decimal.Decimal `json:"balance_before" gorm:"balance_before"`       // 变动前余额
