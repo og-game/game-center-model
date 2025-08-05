@@ -1,6 +1,9 @@
 package models
 
-import "github.com/shopspring/decimal"
+import (
+	"github.com/og-game/glib/stores/gormx"
+	"github.com/shopspring/decimal"
+)
 
 const TableNameMerchantPlatform = "merchant_platform"
 
@@ -11,9 +14,7 @@ type MerchantPlatform struct {
 	PlatformId         int64           `json:"platform_id" gorm:"platform_id"` // 平台id
 	Rate               decimal.Decimal `json:"rate" gorm:"rate"`               // 费率
 	Status             int             `json:"status" gorm:"status"`           // 状态 1 启用 2禁用
-	CreatedAt          int64           `json:"created_at" gorm:"created_at"`
-	UpdatedAt          int64           `json:"updated_at" gorm:"updated_at"`
-	DeletedAt          int64           `json:"deleted_at" gorm:"deleted_at"`
+	gormx.Model
 }
 
 // TableName 表名称

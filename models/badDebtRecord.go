@@ -1,6 +1,9 @@
 package models
 
-import "github.com/shopspring/decimal"
+import (
+	"github.com/og-game/glib/stores/gormx"
+	"github.com/shopspring/decimal"
+)
 
 const TableNameBadDebtRecord = "bad_debt_record"
 
@@ -29,9 +32,7 @@ type BadDebtRecord struct {
 	UserInfoSnapshot string          `json:"user_info_snapshot" gorm:"user_info_snapshot"` // 用户信息快照（JSON格式）
 	Remark           string          `json:"remark" gorm:"remark"`                         // 备注信息
 	ExtData          string          `json:"ext_data" gorm:"ext_data"`                     // 扩展数据（JSON格式）
-	CreatedAt        int64           `json:"created_at" gorm:"created_at"`                 // 创建时间戳
-	UpdatedAt        int64           `json:"updated_at" gorm:"updated_at"`                 // 更新时间戳
-	DeletedAt        int64           `json:"deleted_at" gorm:"deleted_at"`                 // 删除时间戳（软删除）
+	gormx.Model
 }
 
 // TableName 表名称

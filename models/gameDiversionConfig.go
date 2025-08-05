@@ -1,6 +1,9 @@
 package models
 
-import "gorm.io/datatypes"
+import (
+	"github.com/og-game/glib/stores/gormx"
+	"gorm.io/datatypes"
+)
 
 const TableNameGameDiversionConfig = "game_diversion_config"
 
@@ -13,9 +16,7 @@ type GameDiversionConfig struct {
 	TargetId   string                                     `json:"target_id" gorm:"target_id"`     // 目标id 1 是商户ID 2 是币种 code
 	Strategy   datatypes.JSONSlice[GameDiversionStrategy] `json:"strategy" gorm:"strategy"`       // 策略
 	Status     int8                                       `json:"status" gorm:"status"`           // 状态 1 启用 2禁用
-	CreatedAt  int64                                      `json:"created_at" gorm:"created_at"`
-	UpdatedAt  int64                                      `json:"updated_at" gorm:"updated_at"`
-	DeletedAt  int64                                      `json:"deleted_at" gorm:"deleted_at"`
+	gormx.Model
 }
 
 type GameDiversionStrategy struct {
