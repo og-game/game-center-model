@@ -29,6 +29,7 @@ type Game struct {
 	PlatformGameStatus  int                         `json:"platform_game_status" gorm:"platform_game_status"`   // 状态 1启用 2禁用
 	IsTrialPlay         int                         `json:"is_trial_play" gorm:"is_trial_play"`                 // 是否允许试玩 1 是 2否
 	IsDelayWithdraw     int                         `json:"is_delay_withdraw" gorm:"is_delay_withdraw"`         // 是否需要延迟提款
+	IsMaterial          int                         `json:"is_material" gorm:"is_material"`                     // 是否支持素材 1 支持 2 不支持
 	DelayWithdrawSecond int                         `json:"delay_withdraw_second" gorm:"delay_withdraw_second"` // 延迟提款秒数
 	RebateRate          decimal.Decimal             `json:"rebate_rate" gorm:"rebate_rate"`                     // 返奖率
 	Remark              string                      `json:"remark" gorm:"remark"`                               // 备注
