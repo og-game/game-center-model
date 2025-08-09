@@ -6,16 +6,18 @@ const TableNameUserGameLog = "user_game_log"
 
 // UserGameLog undefined
 type UserGameLog struct {
-	GameLogId      int64  `json:"game_log_id" gorm:"game_log_id,primaryKey"`
-	UserId         int64  `json:"user_id" gorm:"user_id"`                   // 用户id
-	MerchantUserID string `json:"merchant_user_id" gorm:"merchant_user_id"` // 商户用户id
-	MerchantId     int64  `json:"merchant_id" gorm:"merchant_id"`           // 商户id
-	PlatformId     int64  `json:"platform_id" gorm:"platform_id"`           // 游戏平台id
-	GameId         int64  `json:"game_id" gorm:"game_id"`                   // 游戏id
-	CategoryCode   string `json:"category_code" gorm:"category_code"`       // 分类code
-	DeviceId       string `json:"device_id" gorm:"device_id"`               // 设备id
-	DeviceOs       string `json:"device_os" gorm:"device_os"`               // 设备os
-	DeviceIp       string `json:"device_ip" gorm:"device_ip"`               // 设备ip
+	GameLogId          int64  `json:"game_log_id" gorm:"game_log_id,primaryKey"`
+	UserId             int64  `json:"user_id" gorm:"user_id"`                           // 用户id
+	MerchantUserID     string `json:"merchant_user_id" gorm:"merchant_user_id"`         // 商户用户id
+	MerchantId         int64  `json:"merchant_id" gorm:"merchant_id"`                   // 商户id
+	PlatformId         int64  `json:"platform_id" gorm:"platform_id"`                   // 游戏平台id
+	GameId             int64  `json:"game_id" gorm:"game_id"`                           // 游戏id
+	OriginalPlatformID int64  `json:"original_platform_id" gorm:"original_platform_id"` // 原始厂商id
+	OriginalGameID     int64  `json:"original_game_id" gorm:"original_game_id"`         // 原始游戏id
+	CategoryCode       string `json:"category_code" gorm:"category_code"`               // 分类code
+	DeviceId           string `json:"device_id" gorm:"device_id"`                       // 设备id
+	DeviceOs           string `json:"device_os" gorm:"device_os"`                       // 设备os
+	DeviceIp           string `json:"device_ip" gorm:"device_ip"`                       // 设备ip
 	gormx.Model
 }
 
