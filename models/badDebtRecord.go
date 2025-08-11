@@ -26,13 +26,13 @@ type BadDebtRecord struct {
 	MerchantOrderID    string          `json:"merchant_order_id" gorm:"column:merchant_order_id;type:varchar(128);default:''"`             // 下游商户订单ID
 	TransactionID      string          `json:"transaction_id" gorm:"column:transaction_id;type:varchar(128);not null;default:''"`          // 中台交易流水号
 	DebtReason         string          `json:"debt_reason" gorm:"column:debt_reason;type:varchar(512);not null;default:''"`                // 坏账原因描述
-	TriggerAction      int             `json:"trigger_action" gorm:"column:trigger_action;type:tinyint;not null;default:0"`                // 触发动作：1=结算撤单,2=重新结算,3=调整扣款
-	Status             int             `json:"status" gorm:"column:status;type:tinyint;not null;default:1"`                                // 处理状态：1=待处理,2=部分回收,3=全部回收
+	TriggerAction      int8             `json:"trigger_action" gorm:"column:trigger_action;type:tinyint;not null;default:0"`                // 触发动作：1=结算撤单,2=重新结算,3=调整扣款
+	Status             int8             `json:"status" gorm:"column:status;type:tinyint;not null;default:1"`                                // 处理状态：1=待处理,2=部分回收,3=全部回收
 	RecoveryAmount     decimal.Decimal `json:"recovery_amount" gorm:"column:recovery_amount;type:decimal(20,6);not null;default:0.000000"` // 已回收金额
 	Remark             string          `json:"remark" gorm:"column:remark;type:varchar(1024);default:''"`                                  // 备注信息
 	ExtData            string          `json:"ext_data" gorm:"column:ext_data;type:text"`                                                  // 扩展数据（JSON格式）-可能有用户的当时的快照信息等等
-	NotifyCount        int             `json:"notify_count" gorm:"column:notify_count;type:tinyint;not null;default:0"`                    // 通知次数
-	NotifyStatus       int             `json:"notify_status" gorm:"column:notify_status;type:tinyint;not null;default:1"`                  // 通知状态：1=等待通知,2=通知中,3=通知成功,4=通知失败
+	NotifyCount        int8             `json:"notify_count" gorm:"column:notify_count;type:tinyint;not null;default:0"`                    // 通知次数
+	NotifyStatus       int8             `json:"notify_status" gorm:"column:notify_status;type:tinyint;not null;default:1"`                  // 通知状态：1=等待通知,2=通知中,3=通知成功,4=通知失败
 	NotifyResponse     string          `json:"notify_response" gorm:"column:notify_response;type:text"`                                    // 通知响应
 	NextNotifyTime     int64           `json:"next_notify_time" gorm:"column:next_notify_time;type:int unsigned;not null;default:0"`       // 下次通知时间
 	LastNotifyTime     int64           `json:"last_notify_time" gorm:"column:last_notify_time;type:int unsigned;not null;default:0"`       // 最后通知时间
