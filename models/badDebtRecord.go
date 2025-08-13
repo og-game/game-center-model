@@ -19,7 +19,7 @@ type BadDebtRecord struct {
 	OriginalPlatformID int64           `json:"original_platform_id" gorm:"column:original_platform_id"`                                    // 原始平台ID[分流之前的用户点击的平台ID]
 	OriginalGameID     int64           `json:"original_game_id" gorm:"column:original_game_id"`                                            // 原始游戏ID[分流之前的用户点击的游戏ID]
 	DebtAmount         decimal.Decimal `json:"debt_amount" gorm:"column:debt_amount;type:decimal(20,6);not null;default:0.000000"`         // 坏账金额（应扣除的原始金额）
-	BalanceBefore      decimal.Decimal `json:"balance_before" gorm:"column:balance_before;type:decimal(20,6);not null;default:0.000000"`   // 执行前余额（这里记录有负值，实际上中台系统的用户余额是无负数的）
+	BalanceBefore      decimal.Decimal `json:"balance_before" gorm:"column:balance_before;type:decimal(20,6);not null;default:0.000000"`   // 执行前余额（这里记录有负值，实际上平台系统的用户余额是无负数的）
 	DeficitAmount      decimal.Decimal `json:"deficit_amount" gorm:"column:deficit_amount;type:decimal(20,6);not null;default:0.000000"`   // 缺口金额（应扣除的原始金额-执行前余额[如果执行前余额为负，则减去0]）
 	BalanceAfter       decimal.Decimal `json:"balance_after" gorm:"column:balance_after;type:decimal(20,6);not null;default:0.000000"`     // 执行后余额（这里记录有负值，实际上中台系统的用户余额是无负数的）
 	OriginalOrderID    string          `json:"original_order_id" gorm:"column:original_order_no;type:varchar(128);not null;default:''"`    // 原始业务订单号
