@@ -3,7 +3,7 @@ module github.com/og-game/game-center-model
 go 1.24.0
 
 require (
-	github.com/og-game/glib v0.0.16
+	github.com/og-game/glib v0.0.31
 	github.com/shopspring/decimal v1.4.0
 	gorm.io/datatypes v1.2.6
 )
@@ -33,6 +33,7 @@ require (
 	github.com/rogpeppe/go-internal v1.14.1 // indirect
 	github.com/segmentio/asm v1.2.0 // indirect
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
+	github.com/spf13/cast v1.9.2 // indirect
 	github.com/zeromicro/go-zero v1.8.4 // indirect
 	go.opentelemetry.io/otel v1.37.0 // indirect
 	go.opentelemetry.io/otel/trace v1.37.0 // indirect
