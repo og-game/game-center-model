@@ -12,7 +12,7 @@ type MQFailedMessage struct {
 	Topic         string         `gorm:"column:topic;type:varchar(128);not null;comment:MQ主题"`
 	Tag           string         `gorm:"column:tag;type:varchar(128);comment:消息标签"`
 	MessageGroup  string         `gorm:"column:message_group;type:varchar(128);comment:顺序消息分组key"`
-	MessageKeys   string         `gorm:"column:message_keys;type:text;comment:消息keys，JSON数组格式"`
+	MessageKeys   datatypes.JSON `gorm:"column:message_keys;type:json;comment:消息keys，JSON数组格式"`
 	MessageBody   string         `gorm:"column:message_body;type:longtext;not null;comment:消息体内容"`
 	MessageType   string         `gorm:"column:message_type;type:varchar(50);not null;comment:消息类型：balance_change|bet_detail|等等"`
 	Properties    datatypes.JSON `gorm:"column:properties;type:json;comment:消息属性，JSON格式"`
