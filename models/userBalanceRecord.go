@@ -27,6 +27,7 @@ type UserBalanceRecord struct {
 	PlatformOrderId    string          `json:"platform_order_id" gorm:"platform_order_id"`       // 平台订单ID（第三方平台的订单号）
 	MerchantOrderId    string          `json:"merchant_order_id" gorm:"merchant_order_id"`       // 下游商户订单ID
 	TransactionId      string          `json:"transaction_id" gorm:"transaction_id"`             // 中台交易流水号
+	TradeTime          int64           `json:"trade_time" gorm:"trade_time"`                     // 交易时间（毫秒）
 	Remark             string          `json:"remark" gorm:"remark"`                             // 备注信息
 	ClientIp           string          `json:"client_ip" gorm:"client_ip"`                       // 客户端IP
 	DeviceID           string          `json:"device_id" gorm:"device_id"`                       // '设备ID'
