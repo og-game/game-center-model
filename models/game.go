@@ -25,6 +25,7 @@ type Game struct {
 	VerticalCover       string                      `json:"vertical_cover" gorm:"vertical_cover"`               // 水平封面
 	ScreenType          int                         `json:"screen_type" gorm:"screen_type"`                     // 横竖屏 1都支持 2 竖屏 3横屏
 	Weigh               int                         `json:"weigh" gorm:"weigh"`                                 // 排序值
+	OpenMethod          int                         `json:"open_method" gorm:"open_method"`                     // 打开方式 1 iframe 2 新标签页
 	Status              int                         `json:"status" gorm:"status"`                               // 状态 1启用 2禁用
 	PlatformGameStatus  int                         `json:"platform_game_status" gorm:"platform_game_status"`   // 状态 1启用 2禁用
 	IsTrialPlay         int                         `json:"is_trial_play" gorm:"is_trial_play"`                 // 是否允许试玩 1 是 2否
