@@ -18,6 +18,7 @@ type UserBalanceRecord struct {
 	CategoryCode       string          `json:"category_code" gorm:"category_code"`               // 分类code
 	OriginalPlatformID int64           `json:"original_platform_id" gorm:"original_platform_id"` // 原始厂商id
 	OriginalGameID     int64           `json:"original_game_id" gorm:"original_game_id"`         // 原始游戏id
+	IsDiversion        int8            `json:"is_diversion" gorm:"is_diversion"`                 // 是否切流：1-开启切流，2-不开启切流
 	TransactionType    int             `json:"transaction_type" gorm:"transaction_type"`         // 交易类型：1=转入游戏,2=从游戏转出,3=投注,4=结算派奖,5=押金,6=返还押金,7=取消投注,8=结算撤单,9=重新派奖,10=调整金额
 	Amount             decimal.Decimal `json:"amount" gorm:"amount"`                             // 变动金额（正数表示增加，负数表示减少）
 	BalanceBefore      decimal.Decimal `json:"balance_before" gorm:"balance_before"`             // 变动前余额
