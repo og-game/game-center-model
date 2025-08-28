@@ -19,6 +19,7 @@ type NotifyEventRecord struct {
 	TraceId        string         `json:"trace_id" gorm:"trace_id;type:varchar(64);comment:链路追踪ID"`
 	EventData      datatypes.JSON `json:"event_data" gorm:"event_data;type:json;not null;comment:事件数据"`
 	Metadata       datatypes.JSON `json:"metadata" gorm:"metadata;type:json;comment:元数据"`
+	IsSend         uint8          `json:"is_send" gorm:"is_send;type:tinyint unsigned;not null;default:0;comment:是否成功发送到队列 1=成功 2=失败"`
 	EventTime      uint64         `json:"event_time" gorm:"event_time;type:bigint unsigned;not null;index:idx_event_time;comment:事件发生时间(毫秒时间戳)"`
 	CreatedAt      uint           `json:"created_at" gorm:"created_at;type:int unsigned;not null;default:0"`
 }
