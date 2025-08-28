@@ -14,6 +14,7 @@ type UserGameLog struct {
 	GameId             int64  `json:"game_id" gorm:"game_id"`                           // 游戏id
 	OriginalPlatformID int64  `json:"original_platform_id" gorm:"original_platform_id"` // 原始厂商id
 	OriginalGameID     int64  `json:"original_game_id" gorm:"original_game_id"`         // 原始游戏id
+	IsDiversion        int8   `json:"is_diversion" gorm:"is_diversion"`                 // 是否切流：1-开启切流，2-不开启切流
 	CategoryCode       string `json:"category_code" gorm:"category_code"`               // 分类code
 	DeviceId           string `json:"device_id" gorm:"device_id"`                       // 设备id
 	DeviceOs           string `json:"device_os" gorm:"device_os"`                       // 设备os
