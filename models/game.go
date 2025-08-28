@@ -27,6 +27,7 @@ type Game struct {
 	Weigh               int                         `json:"weigh" gorm:"weigh"`                                 // 排序值
 	OpenMethod          int                         `json:"open_method" gorm:"open_method"`                     // 打开方式 1 iframe 2 新标签页
 	Status              int                         `json:"status" gorm:"status"`                               // 状态 1启用 2禁用
+	IsMaintain          int                         `json:"is_maintain" gorm:"is_maintain"`                     // 是否维护 1是 2否
 	PlatformGameStatus  int                         `json:"platform_game_status" gorm:"platform_game_status"`   // 状态 1启用 2禁用
 	IsTrialPlay         int                         `json:"is_trial_play" gorm:"is_trial_play"`                 // 是否允许试玩 1 是 2否
 	IsDelayWithdraw     int                         `json:"is_delay_withdraw" gorm:"is_delay_withdraw"`         // 是否需要延迟提款
