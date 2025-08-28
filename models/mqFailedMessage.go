@@ -14,7 +14,7 @@ type MQFailedMessage struct {
 	MessageGroup  string         `gorm:"column:message_group;type:varchar(128);comment:顺序消息分组key"`
 	MessageKeys   datatypes.JSON `gorm:"column:message_keys;type:json;comment:消息keys，JSON数组格式"`
 	MessageBody   string         `gorm:"column:message_body;type:longtext;not null;comment:消息体内容"`
-	MessageType   string         `gorm:"column:message_type;type:varchar(50);not null;comment:消息类型：balance_change|bet_detail|等等"`
+	MessageType   string         `gorm:"column:message_type;type:varchar(50);not null;comment:消息类型：balance_change|bet_detail|notice_record|等等"`
 	Properties    datatypes.JSON `gorm:"column:properties;type:json;comment:消息属性，JSON格式"`
 	RetryCount    int            `gorm:"column:retry_count;not null;default:0;comment:重试次数"`
 	MaxRetryCount int            `gorm:"column:max_retry_count;not null;default:3;comment:最大重试次数"`
