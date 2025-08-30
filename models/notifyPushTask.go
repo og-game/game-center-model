@@ -9,6 +9,7 @@ const (
 // NotifyPushTask 推送任务表
 type NotifyPushTask struct {
 	TaskId         uint64         `json:"task_id" gorm:"task_id;primaryKey;autoIncrement"`
+	NotificationId string         `json:"notification_id" gorm:"notification_id;type:varchar(255);not null;comment:推送唯一ID"`
 	MerchantId     uint64         `json:"merchant_id" gorm:"merchant_id;type:bigint unsigned;not null;index:idx_merchant_status,priority:1;comment:商户ID"`
 	SubscriptionId uint           `json:"subscription_id" gorm:"subscription_id;type:int unsigned;index:idx_subscription;comment:订阅ID"`
 	EndpointId     uint64         `json:"endpoint_id" gorm:"endpoint_id;type:bigint unsigned;not null;index:idx_endpoint;comment:端点ID"`
