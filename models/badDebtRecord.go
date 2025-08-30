@@ -23,7 +23,7 @@ type BadDebtRecord struct {
 	BalanceBefore      decimal.Decimal `json:"balance_before" gorm:"column:balance_before;type:decimal(20,6);not null;default:0.000000"`   // 执行前余额（这里记录有负值，实际上平台系统的用户余额是无负数的）
 	DeficitAmount      decimal.Decimal `json:"deficit_amount" gorm:"column:deficit_amount;type:decimal(20,6);not null;default:0.000000"`   // 缺口金额（应扣除的原始金额-执行前余额[如果执行前余额为负，则减去0]）
 	BalanceAfter       decimal.Decimal `json:"balance_after" gorm:"column:balance_after;type:decimal(20,6);not null;default:0.000000"`     // 执行后余额（这里记录有负值，实际上中台系统的用户余额是无负数的）
-	OriginalOrderID    string          `json:"original_order_id" gorm:"column:original_order_no;type:varchar(128);not null;default:''"`    // 原始业务订单号
+	OriginalOrderID    string          `json:"original_order_id" gorm:"column:original_order_id;type:varchar(128);not null;default:''"`    // 原始业务订单号
 	PlatformOrderID    string          `json:"platform_order_id" gorm:"column:platform_order_id;type:varchar(128);default:''"`             // 三方平台订单ID
 	MerchantOrderID    string          `json:"merchant_order_id" gorm:"column:merchant_order_id;type:varchar(128);default:''"`             // 下游商户订单ID
 	TransactionID      string          `json:"transaction_id" gorm:"column:transaction_id;type:varchar(128);not null;default:''"`          // 中台交易流水号
