@@ -14,7 +14,9 @@ type NotifyPushTask struct {
 	SubscriptionId uint           `json:"subscription_id" gorm:"subscription_id;type:int unsigned;index:idx_subscription;comment:订阅ID"`
 	EndpointId     uint64         `json:"endpoint_id" gorm:"endpoint_id;type:bigint unsigned;not null;index:idx_endpoint;comment:端点ID"`
 	Channel        uint8          `json:"channel" gorm:"channel;type:tinyint unsigned;not null;comment:推送通道 1=HTTP 2=WebSocket 3=gRPC 4=Robot"`
-	EventId        string         `json:"event_id" gorm:"event_id;type:varchar(64);not null;index:idx_event;comment:事件ID"`
+	EventIds       datatypes.JSON `json:"event_ids" gorm:"event_ids;type:json;not null;comment:事件ID集合"`
+	IsBatch        uint8          `json:"is_batch" gorm:"is_batch;type:tinyint unsigned;not null;default:2;comment:是否批量推送 1=是 2=否"`
+	BatchSize      uint           `json:"batch_size" gorm:"batch_size;type:int unsigned;not null;default:0;comment:批量推送数量"`
 	Payload        datatypes.JSON `json:"payload" gorm:"payload;type:json;not null;comment:推送载荷"`
 	Status         uint8          `json:"status" gorm:"status;type:tinyint unsigned;not null;default:1;index:idx_merchant_status,priority:2;index:idx_retry,priority:1;comment:状态 1=待推送 2=成功 3=失败 4=重试中"`
 	RetryCount     uint8          `json:"retry_count" gorm:"retry_count;type:tinyint unsigned;not null;default:0;comment:重试次数"`
