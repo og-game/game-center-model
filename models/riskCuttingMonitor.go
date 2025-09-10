@@ -13,8 +13,8 @@ type RiskCuttingMonitor struct {
 	CuttingID       uint64 `gorm:"primaryKey;autoIncrement;column:cutting_id" json:"cutting_id"`
 	BatchID         string `gorm:"column:batch_id;type:varchar(50);not null;uniqueIndex:uk_batch_evidence,priority:1" json:"batch_id"`
 	EvidenceID      string `gorm:"column:evidence_id;type:varchar(50);not null;uniqueIndex:uk_batch_evidence,priority:2" json:"evidence_id"`
-	TriggerRuleCode string `gorm:"column:trigger_rule_ids;type:varchar(50);not null" json:"trigger_rule_ids"`
-	TriggerRuleName string `gorm:"column:trigger_rule_names;type:varchar(50);not null" json:"trigger_rule_names"`
+	TriggerRuleCode string `gorm:"column:trigger_rule_code;type:varchar(50);not null" json:"trigger_rule_code"`
+	TriggerRuleName string `gorm:"column:trigger_rule_name;type:varchar(50);not null" json:"trigger_rule_name"`
 	UserID          int    `gorm:"column:user_id" json:"user_id"`
 	UserName        string `gorm:"column:user_name;type:varchar(100)" json:"user_name"`
 	MerchantID      int    `gorm:"column:merchant_id" json:"merchant_id"`
