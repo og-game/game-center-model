@@ -1,6 +1,9 @@
 package models
 
-import "github.com/og-game/glib/stores/gormx"
+import (
+	"github.com/og-game/glib/stores/gormx"
+	"gorm.io/datatypes"
+)
 
 const (
 	TableNameRiskGamblingMonitor = "risk_gambling_monitor"
@@ -8,13 +11,14 @@ const (
 
 // RiskGamblingMonitor 对赌监控表
 type RiskGamblingMonitor struct {
-	GamblingID    uint64 `gorm:"primaryKey;autoIncrement;column:gambling_id" json:"gambling_id"`
-	BatchID       string `gorm:"column:batch_id;type:varchar(50);not null;uniqueIndex:uk_batch_evidence,priority:1" json:"batch_id"`
-	EvidenceID    string `gorm:"column:evidence_id;type:varchar(50);not null;uniqueIndex:uk_batch_evidence,priority:2" json:"evidence_id"`
-	RiskScore     int    `gorm:"column:risk_score;default:0" json:"risk_score"`
-	TriggerRule   string `gorm:"column:trigger_rule;type:varchar(215)" json:"trigger_rule"`
-	SameGameCount int    `gorm:"column:same_game_count;default:0" json:"same_game_count"`
-	ScoreCalcTime int    `gorm:"column:score_calc_time" json:"score_calc_time"`
+	GamblingID       uint64         `gorm:"primaryKey;autoIncrement;column:gambling_id" json:"gambling_id"`
+	BatchID          string         `gorm:"column:batch_id;type:varchar(50);not null;uniqueIndex:uk_batch_evidence,priority:1" json:"batch_id"`
+	EvidenceID       string         `gorm:"column:evidence_id;type:varchar(50);not null;uniqueIndex:uk_batch_evidence,priority:2" json:"evidence_id"`
+	RiskScore        int            `gorm:"column:risk_score;default:0" json:"risk_score"`
+	TriggerRuleIDs   datatypes.JSON `gorm:"column:trigger_rule_ids;type:json" json:"trigger_rule_ids"`     // [1, 2]
+	TriggerRuleNames datatypes.JSON `gorm:"column:trigger_rule_names;type:json" json:"trigger_rule_names"` // ["name1", "name2"]
+	SameGameCount    int            `gorm:"column:same_game_count;default:0" json:"same_game_count"`
+	ScoreCalcTime    int            `gorm:"column:score_calc_time" json:"score_calc_time"`
 
 	// 玩家A信息
 	UserACurrency     string `gorm:"column:user_a_currency;type:varchar(10)" json:"user_a_currency"`
