@@ -23,9 +23,11 @@ type RiskCuttingMonitor struct {
 	CurrencyCode    string         `gorm:"column:currency_code;type:varchar(10)" json:"currency_code"`
 	TriggerTime     uint           `gorm:"column:trigger_time;default:0" json:"trigger_time"`
 	Metadata        datatypes.JSON `gorm:"column:metadata;type:json" json:"metadata"`
-	Status          int8           `gorm:"column:status;default:2" json:"status"` // 1-已处理，2-待处理
-	ProcessTime     uint           `gorm:"column:process_time;default:0" json:"process_time"`
-	ProcessUser     string         `gorm:"column:process_user;type:varchar(50)" json:"process_user"`
+	Status          int8           `gorm:"column:status;default:2" json:"status"`                       // 1-已处理，2-待处理
+	OperatorID      int64          `gorm:"column:operator_id" json:"operator_id"`                       // 操作人ID
+	OperatorName    string         `gorm:"column:operator_name;type:varchar(100)" json:"operator_name"` // 操作人姓名
+	OperatorIP      string         `gorm:"column:operator_ip;type:varchar(45)" json:"operator_ip"`      // 操作人IP
+	OperatorTime    int            `gorm:"column:operator_time;not null" json:"operator_time"`          // 操作时间
 
 	// 时间字段
 	gormx.Model
