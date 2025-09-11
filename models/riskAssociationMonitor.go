@@ -8,16 +8,17 @@ const (
 
 // RiskAssociationMonitor 刷子同关联监控表
 type RiskAssociationMonitor struct {
-	AssociationID    uint64 `gorm:"primaryKey;autoIncrement;column:association_id" json:"association_id"`
-	BatchID          string `gorm:"column:batch_id;type:varchar(50);not null;uniqueIndex:uk_batch_evidence,priority:1" json:"batch_id"`
-	EvidenceID       string `gorm:"column:evidence_id;type:varchar(50);not null;uniqueIndex:uk_batch_evidence,priority:2" json:"evidence_id"`
-	MerchantID       int    `gorm:"column:merchant_id;not null;index:idx_merchant_id" json:"merchant_id"`
-	MerchantName     string `gorm:"column:merchant_name;type:varchar(100)" json:"merchant_name"`
-	CurrencyCode     string `gorm:"column:currency_code;type:varchar(10)" json:"currency_code"`
-	AssociationType  int8   `gorm:"column:association_type" json:"association_type"`
-	AssociationInfo  string `gorm:"column:association_info;type:varchar(255)" json:"association_info"`
-	AssociationCount int    `gorm:"column:association_count;default:0;index:idx_association_count" json:"association_count"`
-	Status           int8   `gorm:"column:status;default:1" json:"status"` // 1-有效，2-无效
+	AssociationID   uint64 `gorm:"primaryKey;autoIncrement;column:association_id" json:"association_id"`
+	BatchID         string `gorm:"column:batch_id;type:varchar(50);not null;uniqueIndex:uk_batch_evidence,priority:1" json:"batch_id"`
+	EvidenceID      string `gorm:"column:evidence_id;type:varchar(50);not null;uniqueIndex:uk_batch_evidence,priority:2" json:"evidence_id"`
+	UserID          int    `gorm:"column:user_id" json:"user_id"`
+	UserName        string `gorm:"column:user_name;type:varchar(100)" json:"user_name"`
+	MerchantID      int    `gorm:"column:merchant_id;not null;index:idx_merchant_id" json:"merchant_id"`
+	MerchantName    string `gorm:"column:merchant_name;type:varchar(100)" json:"merchant_name"`
+	CurrencyCode    string `gorm:"column:currency_code;type:varchar(10)" json:"currency_code"`
+	AssociationType string `gorm:"column:association_type" json:"association_type"`
+	AssociationInfo string `gorm:"column:association_info;type:varchar(512)" json:"association_info"`
+	Status          int8   `gorm:"column:status;default:1" json:"status"` // 1-有效，2-无效
 
 	// 时间字段
 	gormx.Model
