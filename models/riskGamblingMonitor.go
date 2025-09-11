@@ -33,12 +33,14 @@ type RiskGamblingMonitor struct {
 	UserBMerchantName string `gorm:"column:user_b_merchant_name;type:varchar(100)" json:"user_b_merchant_name"`
 	UserBID           int    `gorm:"column:user_b_id" json:"user_b_id"`
 	UserBName         string `gorm:"column:user_b_name;type:varchar(100)" json:"user_b_name"`
-
 	// 处理信息
-	Status      int8   `gorm:"column:status;default:2" json:"status"` // 1-已处理，2-待处理
-	ProcessTime uint   `gorm:"column:process_time;default:0" json:"process_time"`
-	ProcessUser string `gorm:"column:process_user;type:varchar(50)" json:"process_user"`
-	Remark      string `gorm:"column:remark;type:text" json:"remark"`
+	Status int8   `gorm:"column:status;default:2" json:"status"` // 1-已处理，2-待处理
+	Remark string `gorm:"column:remark;type:text" json:"remark"`
+
+	OperatorID   int64  `gorm:"column:operator_id" json:"operator_id"`                       // 操作人ID
+	OperatorName string `gorm:"column:operator_name;type:varchar(100)" json:"operator_name"` // 操作人姓名
+	OperatorIP   string `gorm:"column:operator_ip;type:varchar(45)" json:"operator_ip"`      // 操作人IP
+	OperatorTime int    `gorm:"column:operator_time;not null" json:"operator_time"`          // 操作时间
 
 	gormx.Model
 }
