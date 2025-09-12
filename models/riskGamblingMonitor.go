@@ -15,7 +15,7 @@ type RiskGamblingMonitor struct {
 	BatchID          string         `gorm:"column:batch_id;type:varchar(50);not null;uniqueIndex:uk_batch_evidence,priority:1" json:"batch_id"`
 	EvidenceID       string         `gorm:"column:evidence_id;type:varchar(50);not null;uniqueIndex:uk_batch_evidence,priority:2" json:"evidence_id"`
 	RiskScore        int            `gorm:"column:risk_score;default:0" json:"risk_score"`
-	TriggerRuleIDs   datatypes.JSON `gorm:"column:trigger_rule_ids;type:json" json:"trigger_rule_ids"`     // [1, 2]
+	TriggerRuleCodes datatypes.JSON `gorm:"column:trigger_rule_codes;type:json" json:"trigger_rule_codes"` // ["1", "2"]
 	TriggerRuleNames datatypes.JSON `gorm:"column:trigger_rule_names;type:json" json:"trigger_rule_names"` // ["name1", "name2"]
 	SameGameCount    int            `gorm:"column:same_game_count;default:0" json:"same_game_count"`
 	ScoreCalcTime    int            `gorm:"column:score_calc_time" json:"score_calc_time"`
