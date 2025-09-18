@@ -34,6 +34,8 @@ type RiskGamblingMonitor struct {
 	UserBID           int    `gorm:"column:user_b_id" json:"user_b_id"`
 	UserBName         string `gorm:"column:user_b_name;type:varchar(100)" json:"user_b_name"`
 	// 处理信息
+	IsCheck int8   `gorm:"column:is_check;default:1" json:"is_check"` // 1-已检查，2-待检查
+	// 处理信息
 	Status int8   `gorm:"column:status;default:2" json:"status"` // 1-已处理，2-待处理
 	Remark string `gorm:"column:remark;type:text" json:"remark"`
 
