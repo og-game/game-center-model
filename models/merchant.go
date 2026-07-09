@@ -21,6 +21,8 @@ type Merchant struct {
 	BusinessLicense string                      `json:"business_license" gorm:"business_license"` // 营业职照
 	IPWhitelist     datatypes.JSONSlice[string] `json:"ip_whitelist" gorm:"ip_whitelist"`         // IP 白名单
 	Status          int                         `json:"status" gorm:"status"`                     // 状态 1启用 2禁用 3 审核中 4 审核失败
+	WalletType      int                         `json:"wallet_type" gorm:"wallet_type"`           // 钱包类型 1 单一钱包 2 转账钱包 默认转账钱包
+	CallbackUrl     string                      `json:"callback_url" gorm:"callback_url"`         // 回调地址
 	gormx.Model
 }
 

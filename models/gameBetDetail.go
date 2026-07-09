@@ -33,6 +33,8 @@ type GameBetDetail struct {
 	ClientIP           string          `json:"client_ip" gorm:"client_ip"`                       // '客户端IP'
 	DeviceID           string          `json:"device_id" gorm:"device_id"`                       // '设备ID'
 	DeviceOS           string          `json:"device_os" gorm:"device_os"`                       // '设备操作系统'
+	BalanceBefore      decimal.Decimal `json:"balance_before" gorm:"balance_before"`             // 交易前余额
+	BalanceAfter       decimal.Decimal `json:"balance_after" gorm:"balance_after"`               // 交易后余额
 	gormx.Model
 }
 
