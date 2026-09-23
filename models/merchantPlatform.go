@@ -10,6 +10,7 @@ const TableNameMerchantPlatform = "merchant_platform"
 // MerchantPlatform undefined
 type MerchantPlatform struct {
 	MerchantPlatformId int64           `json:"merchant_platform_id" gorm:"merchant_platform_id,primaryKey"`
+	BrandId            int64           `json:"brand_id" gorm:"brand_id"`       // 品牌ID
 	MerchantId         int64           `json:"merchant_id" gorm:"merchant_id"` // 商户id
 	PlatformId         int64           `json:"platform_id" gorm:"platform_id"` // 平台id
 	Rate               decimal.Decimal `json:"rate" gorm:"rate"`               // 费率

@@ -12,6 +12,7 @@ const TableNameMerchantGame = "merchant_game"
 type MerchantGame struct {
 	MerchantGameId int64           `json:"merchant_game_id" gorm:"merchant_game_id"`
 	MerchantId     int64           `json:"merchant_id" gorm:"merchant_id"`     // 商户id
+	BrandId        int64           `json:"brand_id" gorm:"brand_id"`           // 品牌ID
 	GameId         int64           `json:"game_id" gorm:"game_id"`             // 游戏id
 	Material       datatypes.JSON  `json:"material" gorm:"material"`           // 素材
 	Rate           decimal.Decimal `json:"rate" gorm:"rate"`                   // 费率
