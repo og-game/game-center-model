@@ -24,6 +24,7 @@ type Brand struct {
 	WalletType      int                         `json:"wallet_type" gorm:"wallet_type"`           // 钱包类型 1 单一钱包 2 转账钱包 默认转账钱包
 	CallbackUrl     string                      `json:"callback_url" gorm:"callback_url"`         // 回调地址
 	NumOfSubBrand   int64                       `json:"num_of_sub_brand" gorm:"num_of_sub_brand"` // 下级商户品牌数量
+	CreditStatus    int                         `json:"credit_status" gorm:"credit_status"`       // 额度状态 1-正常 2-额度预警 3-禁止所有游戏
 	gormx.Model
 }
 
