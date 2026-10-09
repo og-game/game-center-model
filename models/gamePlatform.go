@@ -12,6 +12,7 @@ type GamePlatform struct {
 	PlatformId   int64                       `json:"platform_id" gorm:"platform_id;primaryKey"` // 平台id
 	PlatformName string                      `json:"platform_name" gorm:"platform_name"`        // 平台名称
 	PlatformCode string                      `json:"platform_code" gorm:"platform_code"`        // 平台code
+	PlatformType int                         `json:"platform_type" gorm:"platform_type"`        // 平台类型 1 三方 2 自研
 	Icon         string                      `json:"icon" gorm:"icon"`                          // 厂商图标
 	Cover        string                      `json:"cover" gorm:"cover"`                        // 厂商封面
 	Countries    datatypes.JSONSlice[string] `json:"countries" gorm:"countries"`                // 国家列表
