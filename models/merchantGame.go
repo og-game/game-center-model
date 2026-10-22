@@ -10,17 +10,18 @@ const TableNameMerchantGame = "merchant_game"
 
 // MerchantGame undefined
 type MerchantGame struct {
-	MerchantGameId int64           `json:"merchant_game_id" gorm:"merchant_game_id"`
-	MerchantId     int64           `json:"merchant_id" gorm:"merchant_id"`         // 商户id
-	BrandId        int64           `json:"brand_id" gorm:"brand_id"`               // 品牌ID
-	GameId         int64           `json:"game_id" gorm:"game_id"`                 // 游戏id
-	Material       datatypes.JSON  `json:"material" gorm:"material"`               // 素材
-	Rate           decimal.Decimal `json:"rate" gorm:"rate"`                       // 费率
-	Status         int             `json:"status" gorm:"status"`                   // 状态 1 启用 2禁用
-	ResourcePack   string          `json:"resource_pack" gorm:"resource_pack"`     // 商户资源包
-	PublishPack    int             `json:"publish_pack" gorm:"publish_pack"`       // 发布状态 1 未发布 2 已发布
-	HorizontalIcon string          `json:"horizontal_icon" gorm:"horizontal_icon"` // 横版图标
-	VerticalIcon   string          `json:"vertical_icon" gorm:"vertical_icon"`     // 竖版图标
+	MerchantGameId   int64           `json:"merchant_game_id" gorm:"merchant_game_id"`
+	MerchantId       int64           `json:"merchant_id" gorm:"merchant_id"`               // 商户id
+	MerchantGameName string          `json:"merchant_game_name" gorm:"merchant_game_name"` // 商户游戏名称
+	BrandId          int64           `json:"brand_id" gorm:"brand_id"`                     // 品牌ID
+	GameId           int64           `json:"game_id" gorm:"game_id"`                       // 游戏id
+	Material         datatypes.JSON  `json:"material" gorm:"material"`                     // 素材
+	Rate             decimal.Decimal `json:"rate" gorm:"rate"`                             // 费率
+	Status           int             `json:"status" gorm:"status"`                         // 状态 1 启用 2禁用
+	ResourcePack     string          `json:"resource_pack" gorm:"resource_pack"`           // 商户资源包
+	PublishPack      int             `json:"publish_pack" gorm:"publish_pack"`             // 发布状态 1 未发布 2 已发布
+	HorizontalIcon   string          `json:"horizontal_icon" gorm:"horizontal_icon"`       // 横版图标
+	VerticalIcon     string          `json:"vertical_icon" gorm:"vertical_icon"`           // 竖版图标
 	gormx.Model
 }
 
