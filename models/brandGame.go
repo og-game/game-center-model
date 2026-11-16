@@ -4,10 +4,10 @@ import (
 	"github.com/og-game/glib/stores/gormx"
 )
 
-const TableNameBrandGameMaterial = "brand_game_material"
+const TableNameBrandGame = "brand_game"
 
-// BrandGameMaterial 品牌素材表
-type BrandGameMaterial struct {
+// BrandGame 品牌游戏表
+type BrandGame struct {
 	BrandGameMaterialId int64  `json:"brand_game_material_id" gorm:"brand_game_material_id;primaryKey"` // 品牌游戏素材ID
 	BrandId             int64  `json:"brand_id" gorm:"brand_id"`                                        // 品牌ID
 	GameId              int64  `json:"game_id" gorm:"game_id"`                                          // 游戏ID
@@ -20,6 +20,6 @@ type BrandGameMaterial struct {
 }
 
 // TableName 表名称
-func (*BrandGameMaterial) TableName() string {
-	return TableNameBrandGameMaterial
+func (*BrandGame) TableName() string {
+	return TableNameBrandGame
 }
